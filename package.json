@@ -1,0 +1,31 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "techno-blog",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crimsondrac1/Techno-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Crimsondrac1/Techno-blog/issues"
+  },
+  "homepage": "https://github.com/Crimsondrac1/Techno-blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.4",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "mysql2": "^2.3.3",
+    "node": "^17.7.2",
+    "sequelize": "^6.20.1"
+  }
+}
