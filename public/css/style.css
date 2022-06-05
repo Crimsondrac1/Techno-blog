@@ -1,0 +1,279 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css";
+
+* {
+  box-sizing: border-box;
+  /* border: 1px solid #000; */
+}
+
+:root {
+  --bg1: #c5f9ff;
+  --bg2: #c5ffd5;
+  --text1: #003b42;
+  --text2: #043f00;
+  --text3: #00aa00;
+  --hl1: #22e9ff;
+  --hl2: #38ff73;
+  --btn1: #005b77;
+  --btn2: #008cb6;
+}
+
+.darkMode {
+  --bg1: #002428;
+  --bg2: #00280b;
+  --text1: #80a9ae;
+  --text2: #96b494;
+  --text3: #00aa00;
+  --hl1: #005e69;
+  --hl2: #00601d;
+}
+
+body,
+html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: var(--text1);
+  background-color: var(--bg1);
+}
+
+nav {
+  display: flex;
+  /* padding: 30px 30px 5px 7px; */
+}
+
+.nav-link {
+  margin-right: 15px;
+  color: var(--text2);
+}
+
+.nav-link:hover {
+  margin-right: 15px;
+  color: var(--text3);
+}
+
+.title-container h1 {
+  background-color: var(--bg1);
+  color: var(--text2);
+  font-size: 40px;
+  /* display: inline-block; */
+  /* padding: 12px; */
+  border-radius: 10px;
+  /* box-shadow: 8px 5px 2px rgba(196, 210, 196, 0.879); */
+  font-family: "Saira Stencil One", cursive;
+}
+
+#logout {
+  all: unset;
+}
+
+a,
+#logout {
+  text-decoration: none;
+  color: var(--text1);
+  font-weight: bold;
+  transition: color 0.1s;
+}
+
+a:hover {
+  color: var(--hl1);
+}
+
+#submit {
+  border: var(--text2);
+  background-color: var(--text1);
+  color: var(--bg2);
+  width: 100%;
+  margin: 5px;
+}
+
+#signup-instead {
+  color: var(--text1);
+}
+
+#signup-instead:hover {
+  background-color: var(--hl1);
+}
+
+.user-info {
+  float: right;
+}
+
+button:not(.logout) {
+  background-color: var(--btn1);
+  border: 0;
+  padding: 1%;
+  color: var(--bg2);
+  font-weight: bold;
+  transition: background-color 0.1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: var(--btn2);
+}
+
+.loginBtn {
+  border-radius: 10px;
+}
+
+.boxText {
+  width: 30%;
+}
+
+.newUser {
+  font-size: 12px;
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+textarea,
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--bg1);
+  width: 100%;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border: 1px solid var(--bg2);
+}
+
+textarea {
+  min-width: 40%;
+  min-height: 100px;
+}
+
+.form-box {
+  border: solid;
+  padding: 10px;
+}
+
+h2 {
+  background-color: var(--bg1);
+  color: var(--text2);
+  padding: 10px;
+  margin: 0;
+  /* font-weight: bold; */
+  font-size: 24px;
+  font-family: "Saira Stencil One", cursive;
+}
+
+form > div {
+  margin-bottom: 2%;
+}
+
+form label {
+  display: block;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: var(--bg1);
+  border-bottom: 1px solid var(--hl2);
+  padding: 0 1%;
+}
+
+header h1 {
+  font-size: 2em;
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
+}
+
+.delete-post-btn {
+  background-color: var(--text2);
+}
+
+.delete-post-btn:hover {
+  background-color: var(--hl2);
+}
+
+ol {
+  list-style-type: none;
+}
+
+.post {
+  margin-bottom: 2%;
+  line-height: 150%;
+  border: solid;
+  padding: 10px;
+}
+
+.post .title {
+  background-color: var(--bg2);
+  color: var(--text2);
+  padding: 10px;
+}
+
+.post .title span {
+  font-style: italic;
+  font-size: 90%;
+  color: var(--text1);
+}
+
+.edit-link {
+  display: block;
+  margin: -1.5% 0 2% 0;
+  color: var(--hl1);
+}
+
+.comments a {
+  color: var(--hl1);
+  font-weight: normal;
+}
+.comment-form {
+  margin-bottom: 5%;
+}
+
+#comment-form {
+  border-top: 35px solid var(--hl1);
+}
+
+.comment {
+  padding: 1%;
+  margin-bottom: 1%;
+}
+
+.comment:nth-child(odd) {
+  background-color: var(--hl1);
+}
+
+.comment:nth-child(even) {
+  background-color: var(--hl2);
+}
+
+.comment .meta {
+  font-size: 90%;
+  margin-bottom: 0.5%;
+  opacity: 0.6;
+}
+
+.edit-post-form {
+  margin-bottom: 5%;
+}
+
+footer {
+  border-top: 1px solid var(--hl2);
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-size: 110%;
+}
