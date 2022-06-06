@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+
 class Post extends Model {}
 
 Post.init(
@@ -9,6 +10,13 @@ Post.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+    },
+    url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isURL: true,
+      },
     },
     title: {
       type: DataTypes.STRING,

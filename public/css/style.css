@@ -215,18 +215,21 @@ ol {
   line-height: 150%;
   border: solid;
   padding: 10px;
+  
 }
 
 .post .title {
   background-color: var(--bg2);
   color: var(--text2);
   padding: 10px;
+  font-size: 24px;
+  border-radius: 15px;
 }
 
 .post .title span {
   font-style: italic;
-  font-size: 90%;
-  color: var(--text1);
+  font-size: 80%;
+  color: var(--text3);
 }
 
 .edit-link {
@@ -236,7 +239,7 @@ ol {
 }
 
 .comments a {
-  color: var(--hl1);
+  color: var(--text2);
   font-weight: normal;
 }
 .comment-form {

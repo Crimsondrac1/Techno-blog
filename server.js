@@ -21,9 +21,11 @@ const sess = {
 
 app.use(session(sess));
 
-const format = require("./utils/format");
+const helpers = require("./utils/helpers");
 
-const hbs = exphbs.create({ format });
+const hbs = exphbs.create({ helpers });
+
+// const hbs = exphbs.create({});
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
