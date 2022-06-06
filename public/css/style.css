@@ -17,16 +17,6 @@
   --btn2: #008cb6;
 }
 
-.darkMode {
-  --bg1: #002428;
-  --bg2: #00280b;
-  --text1: #80a9ae;
-  --text2: #96b494;
-  --text3: #00aa00;
-  --hl1: #005e69;
-  --hl2: #00601d;
-}
-
 body,
 html {
   height: 100%;
@@ -39,7 +29,6 @@ html {
 
 nav {
   display: flex;
-  /* padding: 30px 30px 5px 7px; */
 }
 
 .nav-link {
@@ -56,10 +45,7 @@ nav {
   background-color: var(--bg1);
   color: var(--text2);
   font-size: 40px;
-  /* display: inline-block; */
-  /* padding: 12px; */
   border-radius: 10px;
-  /* box-shadow: 8px 5px 2px rgba(196, 210, 196, 0.879); */
   font-family: "Saira Stencil One", cursive;
 }
 
@@ -75,16 +61,12 @@ a,
   transition: color 0.1s;
 }
 
-a:hover {
-  color: var(--hl1);
+#logout:hover {
+  color: var(--text3)
 }
 
-#submit {
-  border: var(--text2);
-  background-color: var(--text1);
-  color: var(--bg2);
-  width: 100%;
-  margin: 5px;
+a:hover {
+  color: var(--hl1);
 }
 
 #signup-instead {
@@ -99,20 +81,21 @@ a:hover {
   float: right;
 }
 
-button:not(.logout) {
-  background-color: var(--btn1);
+button:not(#logout) {
+  background-color: var(--btn2);
   border: 0;
   padding: 1%;
-  color: var(--bg2);
+  color: var(--bg1);
   font-weight: bold;
   transition: background-color 0.1s;
   cursor: pointer;
   border-radius: 5px;
 }
 
-button:hover {
+ button:hover:not(#logout) {
   background-color: var(--btn2);
-}
+  color: var(--hl1);
+} 
 
 .loginBtn {
   border-radius: 10px;
@@ -161,7 +144,6 @@ h2 {
   color: var(--text2);
   padding: 10px;
   margin: 0;
-  /* font-weight: bold; */
   font-size: 24px;
   font-family: "Saira Stencil One", cursive;
 }
@@ -215,7 +197,6 @@ ol {
   line-height: 150%;
   border: solid;
   padding: 10px;
-  
 }
 
 .post .title {
@@ -233,9 +214,8 @@ ol {
 }
 
 .edit-link {
-  display: block;
   margin: -1.5% 0 2% 0;
-  color: var(--hl1);
+  color: var(--text2);
 }
 
 .comments a {

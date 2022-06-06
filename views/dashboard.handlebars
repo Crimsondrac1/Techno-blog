@@ -2,8 +2,12 @@
 <section class="form-box">
   <form class="new-post-form">
     <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
+      <label for="title">Title</label>
+      <input type="text" id="post-title" name="title" />
+    </div>
+    <div>
+      <label for="url">URL</label>
+      <input type="text" id="post-url" name="url" />
     </div>
     <div>
       <label for="description">Content</label>
@@ -19,8 +23,9 @@
   <ol>
     {{#each posts as |post|}}
     <li>
-      {{> post-info post}}
       <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      {{> post-info post}}
+      
     </li>
     {{/each}}
   </ol>

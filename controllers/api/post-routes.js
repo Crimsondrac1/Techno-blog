@@ -29,6 +29,20 @@ router.get("/", (req, res) => {
     });
 });
 
+router.post("/", chkSession, (req, res) => {
+  Post.create({
+    title: req.body.title,
+    url: req.body.url,
+    description: req.body.description,
+    user_id: req.body.user_id,
+  })
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.get("/:id", (req, res) => {
   Post.findOne({
     where: {
@@ -63,24 +77,27 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", chkSession, (req, res) => {
-  Post.create({
-    title: req.body.title,
-    description: req.body.description,
-    user_id: req.session.user_id,
-  })
-    .then((dbPostData) => res.json(dbPostData))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+
+
+// router.post("/", chkSession, (req, res) => {
+//   Post.create({
+//     title: req.body.title,
+//     description: req.body.description,
+//     user_id: req.session.user_id
+//   })
+//     .then((dbPostData) => res.json(dbPostData))
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 router.put("/:id", chkSession, (req, res) => {
   Post.update(
     {
       title: req.body.title,
       description: req.body.description,
+      url: req.body.url,
     },
     {
       where: {

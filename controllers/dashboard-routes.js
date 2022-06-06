@@ -10,7 +10,7 @@ router.get("/", chkSession, (req, res) => {
     where: {
       user_id: req.session.user_id,
     },
-    attributes: ["id", "title", "description", "created_at"],
+    attributes: ["id", "title", "description", "url", "created_at"],
     include: [
       {
         model: Comment,
@@ -38,7 +38,7 @@ router.get("/", chkSession, (req, res) => {
 
 router.get("/edit/:id", chkSession, (req, res) => {
   Post.findByPk(req.params.id, {
-    attributes: ["id", "title", "description", "created_at"],
+    attributes: ["id", "title", "description", "url", "created_at"],
     include: [
       {
         model: Comment,
@@ -70,5 +70,42 @@ router.get("/edit/:id", chkSession, (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.get('/create/', chkSession, (req, res) => {
+    Post.findAll({
+      where: {
+        user_id: req.session.user_id
+      },
+      attributes: [
+        'id',
+        'title',
+        'created_at',
+        'description',
+        'url',
+      ],
+      include: [
+        {
+          model: Comment,
+          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+          include: {
+            model: User,
+            attributes: ['id', 'username', 'email']
+          }
+        },
+        {
+          model: User,
+          attributes: ['id', 'username', 'email']
+        }
+      ]
+    })
+      .then(dbPostData => {
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+        res.render('edit-post', { posts, loggedIn: true });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
 
 module.exports = router;
