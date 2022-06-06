@@ -6,4 +6,5 @@ const chkSession = (req, res, next) => {
   }
 };
 
+
 module.exports = chkSession;
