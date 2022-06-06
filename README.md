@@ -13,6 +13,7 @@
   ## Media
 
   Git Repo: https://github.com/Crimsondrac1/Techno-blog
+  Heroku repo: https://techno-blog-1.herokuapp.com/
 
 
   #### ![screenshot](./screenshot_01.jpg)
